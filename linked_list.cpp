@@ -3,11 +3,11 @@ using namespace std;
 struct node
 {
     int data;
-    node*next;
+    node *next;
 };
-node*H = NULL;
-node*C = NULL;
-node*T = NULL;
+node *H = NULL;
+node *C = NULL;
+node *T = NULL;
 /*
 +-------+    +-------+    +-------+    +-------+
 | data  | -> | data  | -> | data  | -> | data  |
@@ -17,21 +17,16 @@ node*T = NULL;
 
 */
 
+// add new node
 
+void addNewNode(int data)
+{
 
-// add new node 
-
-void addNewNode(int data){
-
-node * NewNode = new node;
-NewNode -> data = data;
-NewNode->next = nullptr;
+    node *NewNode = new node;
+    NewNode->data = data;
+    NewNode->next = nullptr;
 }
-
-
-
 
 int main()
 {
-    
 }
