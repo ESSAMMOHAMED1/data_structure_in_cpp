@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+//   A linked list is a linear data structure,
+//   in which the elements are not stored at contiguous memory locations.
+//   The elements in a linked list are linked using pointers
+//====================================================================================
+//- types of linked list
+
+// 1- Single-linked list
+//    - Each node has data and a reference to the next node.
+//    - It's unidirectional.
+//====================================================================================
+
+// set structure of Single-linked list
+
+// +-------+    +-------+    +-------+    +-------+
+// | data  | -> | data  | -> | data  | -> | data  |
+// +-------+    +-------+    +-------+    +-------+
+// | next  |    | next  |    | next  |    | NULL  |
+// +-------+    +-------+    +-------+    +-------+
+
+struct Node
+{
+    string name; // set data
+    int number;  // set data
+    Node *next;  // set pointer to linke nodes
+};
+
+Node *H = nullptr; // set main pointer  Head
+Node *T = nullptr; // set main pointer  Tail
+Node *C = nullptr; // set main pointer  Current
+
+//==================================================================================
+// add new node to head of list
+void Add_Head(string A, int B)
+{
+    C = new Node;  // creat new node
+    C->name = A;   // set data of node
+    C->number = B; // set data of node
+    // check if list is impety
+    if (H == nullptr && T == nullptr)
+    {
+        H = C;             // set head = current
+        T = C;             // set tail = current
+        C->next = nullptr; //  set pointer next = null
+    }
+    else
+    {
+        C->next = H; // set current of next = head
+        C = H;       // set current = head
+    }
+}
+
+int main()
+{
+}
