@@ -8,6 +8,7 @@ struct node
 node *H = NULL;
 node *C = NULL;
 node *T = NULL;
+
 /*
 +-------+    +-------+    +-------+    +-------+
 | data  | -> | data  | -> | data  | -> | data  |
