@@ -26,9 +26,9 @@ struct Node
     Node *next;  // set pointer to linke nodes
 };
 
-Node *H = nullptr; // set main pointer  Head
-Node *T = nullptr; // set main pointer  Tail
-Node *C = nullptr; // set main pointer  Current
+Node *H = NULL; // set main pointer  Head
+Node *T = NULL; // set main pointer  Tail
+Node *C = NULL; // set main pointer  Current
 
 //==================================================================================
 
@@ -39,16 +39,16 @@ void Add_Head(string A, int B)
     C->name = A;   // set data of node
     C->number = B; // set data of node
     // check if list is impety
-    if (H == nullptr && T == nullptr)
+    if (H == NULL && T == NULL)
     {
         H = C;             // set head = current
         T = C;             // set tail = current
-        C->next = nullptr; //  set pointer next = null
+        C->next = NULL; //  set pointer next = null
     }
     else
     {
-        C->next = H; // set current of next = head
-        C = H;       // set current = head
+        C -> next = H; // set current of next = head
+        H = C;       // set current = head
     }
 }
 
@@ -61,9 +61,9 @@ void Add_Tail(string A, int B)
     C = new Node;      // creat new node
     C->name = A;       // set data of node
     C->number = B;     // set data of node
-    C->next = nullptr; //  set pointer next = null >> case it's a tail (:
+    C->next = NULL; //  set pointer next = null >> case it's a tail (:
     // check if list is impety
-    if (H == nullptr && T == nullptr)
+    if (H == NULL && T == NULL)
     {
         H = C; // set head = current
         T = C; // set tail = current
@@ -101,11 +101,34 @@ void Erase_Tail()
 
     T = C; //set tail = current 
 
-    C->next = nullptr; // set pointer => null 
+    C->next = NULL; // set pointer => null 
 }
+
+//=====================================================================================
+// print linked list 
+
+void Print_Nodes(){
+C = H;
+while (C!=NULL)
+{
+    cout<<"Name : "<<C->name<<","<<"ID : "<<C->number<<endl;
+    C = C->next;
+}
+
+}
+
+
+
+
+
+
 
 
 int main()
 {
-
+Add_Head("ahmed",1);
+Add_Head("essam",2);
+Add_Head("mohmaed",3);
+Add_Head("gnaa",4);
+Print_Nodes();
 }
