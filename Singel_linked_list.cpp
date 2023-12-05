@@ -58,11 +58,12 @@ void Add_Head(string A, int B)
 
 void Add_Tail(string A, int B)
 {
-    C = new Node;      // creat new node
+    C = new Node;      // create new node
     C->name = A;       // set data of node
     C->number = B;     // set data of node
-    C->next = NULL; //  set pointer next = null >> case it's a tail (:
-    // check if list is impety
+    C->next = NULL;    // set pointer next = null >> case it's a tail (:
+    
+    // check if list is empty
     if (H == NULL && T == NULL)
     {
         H = C; // set head = current
@@ -96,16 +97,16 @@ void Erase_Tail()
     {                    // Current of next
         C = C->next;     // Equal
     }                    // Tail
-   
+
     delete T; // Delete tail
 
-    T = C; //set tail = current 
+    T = C; //set tail = current
 
-    C->next = NULL; // set pointer => null 
+    C->next = NULL; // set pointer => null
 }
 
 //=====================================================================================
-// print linked list 
+// print linked list
 
 void Print_Nodes(){
 C = H;
@@ -130,5 +131,13 @@ Add_Head("ahmed",1);
 Add_Head("essam",2);
 Add_Head("mohmaed",3);
 Add_Head("gnaa",4);
+Print_Nodes();
+cout<<"====================================="<<endl;
+Add_Tail("essam",12);
+Add_Tail("eseeeem",1355);
+Print_Nodes();
+Erase_Tail();
+Erase_Head();
+cout<<"====================================="<<endl;
 Print_Nodes();
 }
