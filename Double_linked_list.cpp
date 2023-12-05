@@ -102,7 +102,7 @@ void Print_Nodes()
 }
 
 
-void Reversed_Print_Nodes()
+void Revers_Print_Nodes()
 {
     C = T;
     while (C != NULL)
