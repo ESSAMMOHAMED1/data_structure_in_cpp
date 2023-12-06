@@ -6,7 +6,7 @@ struct Node
     string name; // set data
     int number;  // set data
     Node *next;  // set pointer to linke nodes
-    Node *F;
+    Node *P;
 };
 
 Node *H = NULL; // set main pointer  Head
@@ -26,14 +26,14 @@ void Add_Head(string A, int B)
         H = C;          // set head = current
         T = C;          // set tail = current
         C->next = NULL; //  set pointer next = null
-        C->F = NULL;   //  set pointer prev = null
+        C->P = NULL;   //  set pointer prev = null
     }
     else
     {
         C->next = H; // set current of next = head
-        H->F = C;
+        H->P = C;
         H = C;       // set current = head
-        H->F = NULL; // set head of prev = null 
+        H->P = NULL; // set head oP prev = null 
     }
 }
 
@@ -54,13 +54,13 @@ void Add_Tail(string A, int B)
         H = C;          // set head = current
         T = C;          // set tail = current
         C->next = NULL; //  set pointer next = null
-        C->F = NULL;   //  set pointer prev = null
+        C->P = NULL;   //  set pointer prev = null
     }
     else
     {
 
-        T->next = C; // pointer tail of next -> current
-        C -> F = T; // set current of prev = tali
+        T->next = C; // pointer tail oP next -> current
+        C -> P = T; // set current oP prev = tali
         T = C;       // set tail = current
     }
 }
@@ -71,9 +71,9 @@ void Add_Tail(string A, int B)
 void Erase_Head()
 {
     C = H;       // set current = head
-    H = H->next; // set head =>> head of next
+    H = H->next; // set head =>> head oP next
     delete C;    // delete current
-    H->F = NULL;
+    H->P = NULL;
 }
 //==============================================================================================
 
@@ -82,7 +82,7 @@ void Erase_Head()
 void Erase_Tail()
 {
     C = T; // set current = head
-    T->F = T; //set tail of prev = tail 
+    T->P = T; //set tail oP prev = tail 
     delete C; //dell current
     T->next = NULL; // set pointer => null
 }
@@ -109,7 +109,7 @@ void Revers_Print_Nodes()
     {
         cout << "Name : " << C->name << ","
              << "ID : " << C->number << endl;
-        C = C->F;
+        C = C->P;
     }
 }
 
