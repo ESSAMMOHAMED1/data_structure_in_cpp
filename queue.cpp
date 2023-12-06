@@ -38,7 +38,7 @@ void EnQueue(string A, int B)
     }
 }
 //=============================================================================================
-void Erase_Head()
+void DeQueue()
 {
     C = F;
     if (F == R)
@@ -56,4 +56,6 @@ void Erase_Head()
 
 int main()
 {
+
+    
 }
