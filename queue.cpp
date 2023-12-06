@@ -8,33 +8,54 @@ struct Node
     Node *next;  // set pointer to linke nodes
 };
 
-Node *H = NULL; // set main pointer  Head
-Node *T = NULL; // set main pointer  Tail
-Node *C = NULL; // set main pointer  Current
+Node *F = NULL; // set main pointer  front
+Node *R = NULL; // set main pointer  rear
+Node *C = NULL; // set main pointer  current
 
-void Add_Tail(string A, int B)
+
+
+bool Deleted(){
+    if(F==NULL&&R==NULL)
+    return true;
+    return false;
+}
+
+void EnQueue(string A, int B)
 {
     C = new Node;      // create new node
     C->name = A;       // set data of node
     C->number = B;     // set data of node
     C->next = NULL;    // set pointer next = null >> case it's a tail (:
     
-    // check if list is empty
-    if (H == NULL && T == NULL)
+    // check if Queue is empty
+    if (Deleted())
     {
-        H = C; // set head = current
-        T = C; // set tail = current
+        F = R = C; // set front = rear = current 
     }
     else
     {
-        T->next = C; // pointer tail of next -> current
-        T = C;       // set tail = current
+        R-> next = C; // pointer rear of next -> current
+        R = C;       // set rear = current
     }
 }
 //=============================================================================================
 void Erase_Head()
 {
-    C = H;       // set current = head
-    H = H->next; // set head =>> head of next
+    C = F;
+    if(F==R){
+    delete C;
+  F =  R = NULL;
+    }  else{
+       // set front = front -> next
+    F = F->next; // set front =>> front of next
     delete C;    // delete current
+    } 
+ 
+}
+
+
+
+
+int main(){
+    
 }
