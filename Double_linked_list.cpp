@@ -33,7 +33,7 @@ void Add_Head(string A, int B)
         C->next = H; // set current of next = head
         H->P = C;
         H = C;       // set current = head
-        H->P = NULL; // set head oP prev = null 
+        H->P = NULL; // set head of prev = null 
     }
 }
 
