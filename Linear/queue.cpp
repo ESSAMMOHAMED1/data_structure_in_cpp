@@ -1,16 +1,16 @@
 // Queue
 #include <bits/stdc++.h>
 using namespace std;
-struct Node
+struct Queue
 {
     string name; // set data
     int number;  // set data
-    Node *next;  // set pointer to linke nodes
+    Queue *next;  // set pointer to linke Queues
 };
 
-Node *F = NULL; // set main pointer  front
-Node *R = NULL; // set main pointer  rear
-Node *C = NULL; // set main pointer  current
+Queue *F = NULL; // set main pointer  front
+Queue *R = NULL; // set main pointer  rear
+Queue *C = NULL; // set main pointer  current
 
 bool Deleted()
 {
@@ -21,10 +21,10 @@ bool Deleted()
 
 void EnQueue(string A, int B)
 {
-    C = new Node;   // create new node
-    C->name = A;    // set data of node
-    C->number = B;  // set data of node
-    C->next = NULL; // set pointer next = null >> case it's a tail (:
+    C = new Queue;   // create new Queue
+    C->name = A;    // set data of Queue
+    C->number = B;  // set data of Queue
+    C->next = NULL; // set pointer next = null 
 
     // check if Queue is empty
     if (Deleted())
