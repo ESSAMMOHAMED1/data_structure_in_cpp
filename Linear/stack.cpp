@@ -29,10 +29,31 @@ void Push(int num, string nam)
     C = new Stack;
     C->name = nam;
     C->number = num;
-
     C->next = T;
     T = C;
 }
+
+void Pop()
+{
+
+    C = T;
+    T = T->next;
+    delete C;
+    if (Check())
+        T = NULL;
+}
+
+
+void Print()
+{
+
+    while(!Check()){
+        cout<<"Name "<<T->name<<" Number "<<T->number<<endl;
+        Pop(); 
+    }
+}
+
+
 
 int main()
 {
